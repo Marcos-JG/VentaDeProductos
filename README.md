@@ -1,7 +1,8 @@
 # Reportes Diarios - Proyecto Venta De Productos
 ### Avances Diarios
 **7 de julio**  
-- **Grupo**: Planificación de la base de datos, sus atributos y entidades.
+- **Grupo**:
+  - Planificación de la base de datos, sus atributos y entidades.
 
 **8 de julio**
 - **Marcos Cruz**:

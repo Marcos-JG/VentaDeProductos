@@ -2,6 +2,7 @@
 ### Avances Diarios
 **7 de julio**  
 - **Grupo**: Planificación de la base de datos, sus atributos y entidades.
+
 **8 de julio**
 - **Marcos Cruz**:
   -Creación del repositorio en github    

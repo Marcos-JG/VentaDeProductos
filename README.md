@@ -9,4 +9,4 @@
   - Creación del repositorio en github. 
 - **Roger Valladares**:  
   - Creación de la DB con sus respectivo CRUD y automatización en modo de prueba.
-  - Avance en lógica del inventario.
+  - Avance en lógica de inventario.

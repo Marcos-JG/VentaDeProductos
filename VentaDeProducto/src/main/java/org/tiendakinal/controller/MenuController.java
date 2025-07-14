@@ -38,7 +38,7 @@ public class MenuController implements Initializable {
             principal.getInventarioView();
         }
         if (evento.getSource() == btnInicioCompra) {
-             principal.getMenuView();
+             principal.getCompraInicioView();
         }
     }
     

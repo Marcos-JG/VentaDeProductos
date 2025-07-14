@@ -70,7 +70,96 @@ create table Facturas(
 		references Pagos(idPago) on delete cascade
 );
 
+create table Cliente(
+	idCliente int auto_increment,
+	nombreCliente varchar (128) default 'Consumidor Final',
+    NIT varchar(128) default 'Consumidor Final',
+    idCompra int,
+    idFactura int,
+    constraint pk_clientes primary key (idCliente), 
+    constraint fk_facturas_cliente foreign key (idCompra)
+		references Compras(idCompra) on delete cascade,
+	constraint fk_facturas2_cliente foreign key (idFactura)
+		references Facturas(idFactura) on delete cascade
+);
+
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- CRUD CLIENTE
+
+-- CREATE:
+DELIMITER $$ 
+create procedure sp_AgregarCliente(
+		in p_nombreCliente varchar(200),
+		in p_NIT varchar(200),
+		in p_idCompra int,
+        in p_idFactura int)
+	begin
+		insert into CLiente(nombreCliente, NIT,idCompra,idFactura)
+		values(p_nombreCliente, p_NIT, p_idCompra,p_idFactura);
+	end;
+$$
+DELIMITER ;
+
+DELIMITER $$ 
+create procedure sp_AgregarCliente2(
+		in p_idCompra int,
+        in p_idFactura int)
+	begin
+		insert into CLiente(idCompra,idFactura)
+		values(p_idCompra,p_idFactura);
+	end;
+$$
+DELIMITER ;
+
+-- READ:
+DELIMITER $$
+create procedure sp_ListarClientes()
+    begin
+		select 
+        idCliente as ID,
+        nombreCliente as CLIENTE,
+        NIT as NIT,
+        idCompra as COMPRA,
+        idFactura as FACTURA
+        from Cliente;
+    end;
+$$
+DELIMITER ;
+call sp_ListarClientes();
+
+-- UPDATE
+DELIMITER $$
+create procedure sp_ActualizarCliente(
+		in p_idCliente int,
+		in p_nombreCliente varchar(200),
+		in p_NIT varchar(200),
+		in p_idCompra int,
+        in p_idFactura int)
+	begin
+		update Cliente
+			set
+				nombreCliente = p_nombreCliente,
+				NIT = p_NIT,
+				idCompra = p_idCompra,
+                idFactura = p_idFactura
+            where 
+				p_idCliente = idCliente;
+		
+	end;
+$$
+DELIMITER ;
+
+-- DELETE
+DELIMITER $$
+create procedure sp_EliminarCliente(in p_idCliente int)
+    begin
+		delete 
+        from Cliente
+			where idCliente = p_idClientes;
+    end 
+$$
+DELIMITER ;
+
 -- CRUD USUARIOS
 -- CREATE
 DELIMITER $$ 

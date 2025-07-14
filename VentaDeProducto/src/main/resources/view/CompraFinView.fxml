@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="672.0" prefWidth="1242.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tiendakinal.controller.CompraFinController">
+    <stylesheets>
+        <URL value="@/resources/comprafinview.css" />
+    </stylesheets>
+   <children>
+      <GridPane alignment="TOP_CENTER" layoutX="53.0" layoutY="13.0" maxHeight="1090.0" maxWidth="1880.0" minHeight="326.0" minWidth="981.0" prefHeight="605.0" prefWidth="1136.0" styleClass="grid-pane">
+         <columnConstraints>
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="695.0" minWidth="0.0" prefWidth="324.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="875.0" minWidth="10.0" prefWidth="504.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="25.0" prefWidth="74.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="875.0" minWidth="8.0" prefWidth="85.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="875.0" minWidth="10.0" prefWidth="337.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="875.0" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="148.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="201.0" minHeight="0.0" prefHeight="154.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="242.0" minHeight="0.0" prefHeight="84.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="285.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="160.0" minHeight="9.0" prefHeight="101.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label />
+            <Label prefHeight="38.0" prefWidth="200.0" text="NIT" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <rotationAxis>
+                  <Point3D x="2.0" z="1.0" />
+               </rotationAxis>
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label>
+               <rotationAxis>
+                  <Point3D x="2.0" z="1.0" />
+               </rotationAxis>
+            </Label>
+            <Label prefHeight="45.0" prefWidth="200.0" text="EMPLEADO" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <rotationAxis>
+                  <Point3D x="2.0" z="1.0" />
+               </rotationAxis>
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNit" prefHeight="60.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <Label prefHeight="84.0" prefWidth="275.0" text="MÉTODO DE PAGO " GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <rotationAxis>
+                  <Point3D x="2.0" z="1.0" />
+               </rotationAxis>
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="8.0" prefWidth="256.0" GridPane.columnIndex="4">
+               <children>
+                  <TextField fx:id="txtSubtotal" prefHeight="68.0" prefWidth="256.0" styleClass="labelTotales">
+                     <font>
+                        <Font size="47.0" />
+                     </font>
+                  </TextField>
+                  <Label prefHeight="39.0" prefWidth="309.0" text="SUBTOTAL">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <TextField fx:id="txtTotal" prefHeight="36.0" prefWidth="256.0" styleClass="labelTotales">
+                     <font>
+                        <Font size="47.0" />
+                     </font>
+                  </TextField>
+                  <Label contentDisplay="CENTER" prefHeight="84.0" prefWidth="402.0" text="TOTAL (CON IVA)">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <ComboBox fx:id="cbEmpleado" prefHeight="60.0" prefWidth="866.0" styleClass="label-textField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="276.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <RadioButton fx:id="rbEfectivo" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="EFECTIVO">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Cobro" />
+                     </toggleGroup>
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="rbTarjeta" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="TARJETA" toggleGroup="$Cobro">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Button fx:id="btnPagar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#pagar" prefHeight="125.0" prefWidth="225.0" text="COMPLETAR COMPRA" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCancelar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cancelarPedido" prefHeight="125.0" prefWidth="225.0" text="CANCELAR PEDIDO" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Label prefHeight="38.0" prefWidth="200.0" text="NOMBRE" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNombre" prefHeight="60.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

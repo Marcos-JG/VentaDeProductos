@@ -10,16 +10,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.tiendakinal.controller.CompraFinController;
+import org.tiendakinal.controller.CompraInicioController;
 import org.tiendakinal.controller.InicioController;
 import org.tiendakinal.controller.InventarioController;
 import org.tiendakinal.controller.MenuController;
- 
-/**
-* clean javafx:run
-* @author informatica
-*/
 
-public class Main extends Application{
+/**
+ * clean javafx:run
+ *
+ * @author informatica
+ */
+public class Main extends Application {
 
     private Stage escenarioPrincipal;
     private Scene siguienteEscena;
@@ -36,7 +38,6 @@ public class Main extends Application{
 
 //        Image icono = new Image(getClass().getResource("/org/rogervalladares/image/logoImagen.png").toExternalForm());
 //        escenarioPrincipal.getIcons().add(icono);
-
         getLoginView();
         escenarioPrincipal.show();
     }
@@ -67,7 +68,7 @@ public class Main extends Application{
             ex.printStackTrace();
         }
     }
-    
+
     public void getMenuView() {
         try {
             MenuController control
@@ -78,7 +79,7 @@ public class Main extends Application{
             ex.printStackTrace();
         }
     }
-    
+
     public void getInventarioView() {
         try {
             InventarioController control
@@ -89,6 +90,50 @@ public class Main extends Application{
             ex.printStackTrace();
         }
     }
+
+    public void getCompraInicioView() {
+        try {
+            CompraInicioController control
+                    = (CompraInicioController) cambiarEscena("CompraInicioView.fxml", 1394, 606);
+            control.setPrincipal(this);
+        } catch (Exception ex) {
+            System.out.println("Error al ir a Menu: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
+    public void getCompraFinView() {
+        try {
+            CompraFinController control
+                    = (CompraFinController) cambiarEscena("CompraFinView.fxml", 1242, 672);
+            control.setPrincipal(this);
+        } catch (Exception ex) {
+            System.out.println("Error al ir a Menu: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
     
+    
+
+    public void getCompraFinView(int idCompra, double subtotal) {
+        try {
+            FXMLLoader cargadorFXML = new FXMLLoader();
+            InputStream archivoFXML = Main.class.getResourceAsStream(URL + "CompraFinView.fxml");
+
+            cargadorFXML.setBuilderFactory(new JavaFXBuilderFactory());
+            cargadorFXML.setLocation(Main.class.getResource(URL + "CompraFinView.fxml"));
+
+            siguienteEscena = new Scene(cargadorFXML.load(archivoFXML), 1242, 672);
+            escenarioPrincipal.setScene(siguienteEscena);
+            escenarioPrincipal.sizeToScene();
+
+            CompraFinController control = cargadorFXML.getController();
+            control.setPrincipal(this);
+            control.initData(idCompra, subtotal); // Pasar los datos a Factura2Controller
+        } catch (Exception ex) {
+            System.out.println("Error al ir a factura2: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
 
 }

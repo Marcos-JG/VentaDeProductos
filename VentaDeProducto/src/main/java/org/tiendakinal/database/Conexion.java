@@ -15,7 +15,7 @@ public class Conexion {
     private Connection conexion;
     private String url = "jdbc:mysql://127.0.0.1:3306/tiendaDB?useSSL=false";
     private String user = "root";
-    private String password = "root";
+    private String password = "123456789";
     private String driver = "com.mysql.jdbc.Driver";
 
     private Conexion() {

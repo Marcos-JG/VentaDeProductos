@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
@@ -17,102 +16,54 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="672.0" prefWidth="1242.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tiendakinal.controller.CompraFinController">
-    <stylesheets>
-        <URL value="@/resources/comprafinview.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="1350.0" styleClass="mainFxmlClass" stylesheets="@../resources/comprafinview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tiendakinal.controller.CompraFinController">
    <children>
-      <GridPane alignment="TOP_CENTER" layoutX="53.0" layoutY="13.0" maxHeight="1090.0" maxWidth="1880.0" minHeight="326.0" minWidth="981.0" prefHeight="605.0" prefWidth="1136.0" styleClass="grid-pane">
+      <GridPane alignment="TOP_CENTER" layoutX="96.0" layoutY="132.0" maxHeight="1090.0" maxWidth="1880.0" minHeight="218.0" minWidth="981.0" prefHeight="222.0" prefWidth="1168.0">
          <columnConstraints>
-            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="695.0" minWidth="0.0" prefWidth="324.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="875.0" minWidth="10.0" prefWidth="504.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="25.0" prefWidth="74.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="875.0" minWidth="8.0" prefWidth="85.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="875.0" minWidth="10.0" prefWidth="337.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="875.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" maxWidth="695.0" minWidth="0.0" prefWidth="165.0" />
+            <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" maxWidth="875.0" minWidth="10.0" prefWidth="397.0" />
+            <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" maxWidth="875.0" minWidth="10.0" prefWidth="201.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="20.0" prefWidth="271.0" />
+            <ColumnConstraints fillWidth="false" halignment="LEFT" maxWidth="875.0" minWidth="10.0" prefWidth="354.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="148.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="201.0" minHeight="0.0" prefHeight="154.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="242.0" minHeight="0.0" prefHeight="84.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="285.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="160.0" minHeight="9.0" prefHeight="101.0" vgrow="SOMETIMES" />
+            <RowConstraints fillHeight="false" maxHeight="201.0" minHeight="0.0" prefHeight="84.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints fillHeight="false" maxHeight="242.0" minHeight="0.0" prefHeight="93.0" valignment="CENTER" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label />
-            <Label prefHeight="38.0" prefWidth="200.0" text="NIT" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <Label contentDisplay="CENTER" prefHeight="45.0" prefWidth="283.0" text="NIT" GridPane.halignment="RIGHT">
                <rotationAxis>
                   <Point3D x="2.0" z="1.0" />
                </rotationAxis>
                <font>
-                  <Font size="30.0" />
+                  <Font size="25.0" />
                </font>
             </Label>
-            <Label>
-               <rotationAxis>
-                  <Point3D x="2.0" z="1.0" />
-               </rotationAxis>
-            </Label>
-            <Label prefHeight="45.0" prefWidth="200.0" text="EMPLEADO" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+            <Label prefHeight="45.0" prefWidth="302.0" text="EMPLEADO" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
                <rotationAxis>
                   <Point3D x="2.0" z="1.0" />
                </rotationAxis>
                <font>
-                  <Font size="30.0" />
+                  <Font size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="txtNit" prefHeight="60.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="txtNit" prefHeight="60.0" prefWidth="350.0" GridPane.columnIndex="1">
                <font>
                   <Font size="25.0" />
                </font>
             </TextField>
-            <Label prefHeight="84.0" prefWidth="275.0" text="MÉTODO DE PAGO " GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+            <Label prefHeight="84.0" prefWidth="310.0" text="MÉTODO DE PAGO " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <rotationAxis>
                   <Point3D x="2.0" z="1.0" />
                </rotationAxis>
                <font>
-                  <Font size="30.0" />
+                  <Font size="25.0" />
                </font>
             </Label>
-            <VBox prefHeight="8.0" prefWidth="256.0" GridPane.columnIndex="4">
+            <ComboBox fx:id="cbEmpleado" prefHeight="60.0" prefWidth="350.0" styleClass="label-textField" GridPane.columnIndex="4" />
+            <HBox alignment="CENTER" fillHeight="false" prefHeight="56.0" prefWidth="390.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <children>
-                  <TextField fx:id="txtSubtotal" prefHeight="68.0" prefWidth="256.0" styleClass="labelTotales">
-                     <font>
-                        <Font size="47.0" />
-                     </font>
-                  </TextField>
-                  <Label prefHeight="39.0" prefWidth="309.0" text="SUBTOTAL">
-                     <font>
-                        <Font size="27.0" />
-                     </font>
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding>
-                  </Label>
-               </children>
-            </VBox>
-            <VBox GridPane.columnIndex="4" GridPane.rowIndex="1">
-               <children>
-                  <TextField fx:id="txtTotal" prefHeight="36.0" prefWidth="256.0" styleClass="labelTotales">
-                     <font>
-                        <Font size="47.0" />
-                     </font>
-                  </TextField>
-                  <Label contentDisplay="CENTER" prefHeight="84.0" prefWidth="402.0" text="TOTAL (CON IVA)">
-                     <font>
-                        <Font size="27.0" />
-                     </font>
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding>
-                  </Label>
-               </children>
-            </VBox>
-            <ComboBox fx:id="cbEmpleado" prefHeight="60.0" prefWidth="866.0" styleClass="label-textField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="276.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <children>
-                  <RadioButton fx:id="rbEfectivo" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="EFECTIVO">
+                  <RadioButton fx:id="rbEfectivo" mnemonicParsing="false" prefHeight="50.0" prefWidth="189.0" text="EFECTIVO">
                      <toggleGroup>
                         <ToggleGroup fx:id="Cobro" />
                      </toggleGroup>
@@ -120,34 +71,82 @@
                         <Font size="25.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="rbTarjeta" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="TARJETA" toggleGroup="$Cobro">
+                  <RadioButton fx:id="rbTarjeta" mnemonicParsing="false" prefHeight="50.0" prefWidth="166.0" text="TARJETA" toggleGroup="$Cobro">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </RadioButton>
                </children>
             </HBox>
-            <Button fx:id="btnPagar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#pagar" prefHeight="125.0" prefWidth="225.0" text="COMPLETAR COMPRA" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+            <Label contentDisplay="CENTER" prefHeight="45.0" prefWidth="294.0" text="NOMBRE" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnCancelar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cancelarPedido" prefHeight="125.0" prefWidth="225.0" text="CANCELAR PEDIDO" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Label prefHeight="38.0" prefWidth="200.0" text="NOMBRE" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-               <font>
-                  <Font size="30.0" />
+                  <Font size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="txtNombre" prefHeight="60.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtNombre" prefHeight="60.0" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="25.0" />
                </font>
             </TextField>
          </children>
       </GridPane>
+      <GridPane layoutX="443.0" layoutY="519.0" prefHeight="56.0" prefWidth="473.0">
+        <columnConstraints>
+          <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="111.0" minHeight="2.0" prefHeight="111.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnCancelar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cancelarPedido" prefHeight="41.0" prefWidth="242.0" text="CANCELAR PEDIDO" textAlignment="CENTER" GridPane.columnIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnPagar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#pagar" prefHeight="39.0" prefWidth="225.0" text="COMPLETAR COMPRA" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="446.0" layoutY="361.0" prefHeight="136.0" prefWidth="225.0">
+         <children>
+            <TextField fx:id="txtSubtotal" editable="false" prefHeight="82.0" prefWidth="214.0">
+               <font>
+                  <Font size="39.0" />
+               </font>
+            </TextField>
+            <Label contentDisplay="TOP" prefHeight="34.0" prefWidth="162.0" text="SUBTOTAL" textAlignment="CENTER">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="680.0" layoutY="361.0" prefHeight="136.0" prefWidth="236.0">
+         <children>
+            <TextField fx:id="txtTotal" editable="false" prefHeight="82.0" prefWidth="214.0" styleClass="labelTotales">
+               <font>
+                  <Font size="39.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets top="40.0" />
+               </opaqueInsets>
+            </TextField>
+            <Label contentDisplay="TOP" prefHeight="34.0" prefWidth="191.0" text="TOTAL(+IVA)" textAlignment="CENTER">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

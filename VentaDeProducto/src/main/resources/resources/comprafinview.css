@@ -1,0 +1,85 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+
+/* Encabezados */
+.label-title {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-background-color: #005227;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: #03bb85;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #038554;
+}
+
+.button:pressed {
+    -fx-background-color: #005227;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: #68ddbd;
+    -fx-border-color: #038554;
+    -fx-border-radius: 5px;
+    -fx-table-cell-border-color: #038554;
+    -fx-padding: 10px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #03bb85;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: #a4fff7;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #bdf3ea; /* tono intermedio */
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #68ddbd;
+}
+
+/* Opcional: estilo de TextField */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #03bb85;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-text-fill: #005227;
+}
+
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #d1fff6   ; /* celeste claro */
+}
+
+}

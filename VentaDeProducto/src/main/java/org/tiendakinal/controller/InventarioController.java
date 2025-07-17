@@ -1,5 +1,6 @@
 package org.tiendakinal.controller;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -7,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.tiendakinal.database.Conexion;
 import org.tiendakinal.model.Producto;
+import org.tiendakinal.report.Report;
 import org.tiendakinal.system.Main;
 
 /**
@@ -291,5 +295,32 @@ public class InventarioController implements Initializable {
     public void setPrincipal(Main principal) {
         this.principal = principal;
     }
+    
+        //------------------------------------------------------------------------------------------------------------------INICIA EL REPORTE
+    
+    //Map parametros
+    private Map<String, Object> parametros;
+
+    //cargador inputStream
+    private InputStream cargarReporte(String urlReporte) {
+        InputStream reporte = null;
+        try {
+            reporte = Main.class.getResourceAsStream(urlReporte);
+            reporte.getClass().getResource(urlReporte);
+        } catch (Exception e) {
+            System.out.println("Error al cargar" + urlReporte + e.getMessage());
+            e.printStackTrace();
+        }
+        return reporte;
+    }
+    //inicializador de impresion  de reporte
+    @FXML
+    private void imprimirReporte(){
+        Connection conexion = Conexion.getInstancia().getConexion();
+        Report.generarReporte(conexion, parametros, cargarReporte("/org/tiendaKinal/report/Inventario.jasper"));
+        Report.mostrarReporte();
+    }
+    //------------------------------------------------------------------------------------------------------------------FINALIZA EL REPORTE
+
     
 }

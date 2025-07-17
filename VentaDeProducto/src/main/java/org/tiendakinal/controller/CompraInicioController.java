@@ -1,5 +1,6 @@
 package org.tiendakinal.controller;
 
+
 import java.net.URL;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -339,4 +340,6 @@ public class CompraInicioController implements Initializable {
     public void setPrincipal(Main principal) {
         this.principal = principal;
     }
+    
+    
 }

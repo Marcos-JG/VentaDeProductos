@@ -61,7 +61,7 @@ public class Main extends Application {
     public void getLoginView() {
         try {
             InicioController control
-                    = (InicioController) cambiarEscena("InicioView.fxml", 600, 600);
+                    = (InicioController) cambiarEscena("InicioView.fxml", 900, 600);
             control.setPrincipal(this);
         } catch (Exception ex) {
             System.out.println("Error al ir al login/Inicio: " + ex.getMessage());
@@ -72,7 +72,7 @@ public class Main extends Application {
     public void getMenuView() {
         try {
             MenuController control
-                    = (MenuController) cambiarEscena("MenuView.fxml", 650, 650);
+                    = (MenuController) cambiarEscena("MenuView.fxml", 600, 400);
             control.setPrincipal(this);
         } catch (Exception ex) {
             System.out.println("Error al ir a Menu: " + ex.getMessage());
@@ -94,7 +94,7 @@ public class Main extends Application {
     public void getCompraInicioView() {
         try {
             CompraInicioController control
-                    = (CompraInicioController) cambiarEscena("CompraInicioView.fxml", 1394, 606);
+                    = (CompraInicioController) cambiarEscena("CompraInicioView.fxml", 1350 , 606);
             control.setPrincipal(this);
         } catch (Exception ex) {
             System.out.println("Error al ir a Menu: " + ex.getMessage());
@@ -105,7 +105,7 @@ public class Main extends Application {
     public void getCompraFinView() {
         try {
             CompraFinController control
-                    = (CompraFinController) cambiarEscena("CompraFinView.fxml", 1242, 672);
+                    = (CompraFinController) cambiarEscena("CompraFinView.fxml", 1350, 687);
             control.setPrincipal(this);
         } catch (Exception ex) {
             System.out.println("Error al ir a Menu: " + ex.getMessage());

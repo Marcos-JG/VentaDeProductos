@@ -325,7 +325,7 @@ BEGIN
     FROM Compras c;
 END$$
 DELIMITER ;
-call sp_ListarCompras();	
+call sp_ListarCompras();		
 
 -- UPDATE
 DELIMITER $$
@@ -546,6 +546,11 @@ create procedure sp_ListarFactura()
 $$
 DELIMITER ;
 call sp_ListarFactura();
+SET @idPago = 0;
+CALL sp_AgregarPagos('Efectivo', 750.00, 1, @idPago);
+SELECT @idPago;
+CALL sp_AgregarFactura('Efectivo', 1, 1, @idPago);
+
 
 -- UPDATE
 DELIMITER $$

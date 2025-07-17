@@ -5,9 +5,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@../resources/comprafinview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tiendakinal.controller.MenuController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@../resources/comprafinview.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tiendakinal.controller.MenuController">
    <children>
-      <Button fx:id="btnInventario" contentDisplay="TOP" layoutX="116.0" layoutY="104.0" mnemonicParsing="false" onAction="#clickManejadorEventos" prefHeight="79.0" prefWidth="144.0" text="Inventario">
+      <Button fx:id="btnInventario" contentDisplay="TOP" layoutX="106.0" layoutY="120.0" mnemonicParsing="false" onAction="#clickManejadorEventos" prefHeight="79.0" prefWidth="144.0" text="Inventario">
          <graphic>
             <ImageView fitHeight="117.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -15,7 +15,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="btnInicioCompra" contentDisplay="TOP" layoutX="346.0" layoutY="104.0" mnemonicParsing="false" onAction="#clickManejadorEventos" prefHeight="79.0" prefWidth="144.0" text="Compras">
+      <Button fx:id="btnInicioCompra" contentDisplay="TOP" layoutX="336.0" layoutY="120.0" mnemonicParsing="false" onAction="#clickManejadorEventos" prefHeight="79.0" prefWidth="144.0" text="Compras">
          <graphic>
             <ImageView fitHeight="117.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
                <image>

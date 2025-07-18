@@ -34,16 +34,22 @@ import org.tiendakinal.system.Main;
  */
 public class InventarioController implements Initializable {
 
-    @FXML private Button btnRegresar, btnAgregar, btnEditar, btnEliminar, btnReporte;
-    
-    @FXML private TableView<Producto> tablaProductos;
-    
-    @FXML private TableColumn<Producto, Integer> colId, colStock;
-    @FXML private TableColumn<Producto, String> colNombre, colCodigoBarras, colMarca;
-    @FXML private TableColumn<Producto, Double> colPrecio;
-    
-    @FXML private TextField txtId, txtNombre, txtMarca, txtPrecio, txtStock, txtCodigoBarras;
-    
+    @FXML
+    private Button btnRegresar, btnAgregar, btnEditar, btnEliminar, btnReporte;
+
+    @FXML
+    private TableView<Producto> tablaProductos;
+
+    @FXML
+    private TableColumn<Producto, Integer> colId, colStock;
+    @FXML
+    private TableColumn<Producto, String> colNombre, colCodigoBarras, colMarca;
+    @FXML
+    private TableColumn<Producto, Double> colPrecio;
+
+    @FXML
+    private TextField txtId, txtNombre, txtMarca, txtPrecio, txtStock, txtCodigoBarras;
+
     private ObservableList<Producto> listaProductos;
     private Main principal;
     private Producto modeloProducto;
@@ -52,7 +58,7 @@ public class InventarioController implements Initializable {
         Agregar, Editar, Eliminar, Ninguna
     };
     private Acciones accion = Acciones.Ninguna;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setFormatoColumnaModelo();
@@ -63,7 +69,7 @@ public class InventarioController implements Initializable {
         });
         deshabilitarControles();
     }
-    
+
     public void setFormatoColumnaModelo() {
         colId.setCellValueFactory(new PropertyValueFactory<>("idProducto"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombreProducto"));
@@ -72,7 +78,7 @@ public class InventarioController implements Initializable {
         colStock.setCellValueFactory(new PropertyValueFactory<>("stockProducto"));
         colCodigoBarras.setCellValueFactory(new PropertyValueFactory<>("codigoBarras"));
     }
-    
+
     public void cargarDatos() {
         listaProductos = FXCollections.observableArrayList(listarProductos());
         tablaProductos.setItems(listaProductos);
@@ -117,7 +123,7 @@ public class InventarioController implements Initializable {
         }
         return productos;
     }
-    
+
     private Producto getModeloProducto() {
         int idProducto = txtId.getText().isEmpty() ? 0 : Integer.parseInt(txtId.getText());
         String nombreProducto = txtNombre.getText();
@@ -128,7 +134,7 @@ public class InventarioController implements Initializable {
 
         return new Producto(idProducto, nombreProducto, marcaProducto, precioProducto, stockProducto, codigoBarras);
     }
-    
+
     public void agregarProducto() {
         if (validarCampos()) {
             modeloProducto = getModeloProducto();
@@ -184,16 +190,16 @@ public class InventarioController implements Initializable {
     }
 
     private boolean validarCampos() {
-        if (txtNombre.getText().isEmpty() || 
-            txtMarca.getText().isEmpty() || 
-            txtPrecio.getText().isEmpty() || 
-            txtStock.getText().isEmpty() || 
-            txtCodigoBarras.getText().isEmpty()) {
-            
+        if (txtNombre.getText().isEmpty()
+                || txtMarca.getText().isEmpty()
+                || txtPrecio.getText().isEmpty()
+                || txtStock.getText().isEmpty()
+                || txtCodigoBarras.getText().isEmpty()) {
+
             mostrarAlerta("Campo/s vacios");
             return false;
         }
-        
+
         try {
             Double.parseDouble(txtPrecio.getText());
             Integer.parseInt(txtStock.getText());
@@ -201,7 +207,7 @@ public class InventarioController implements Initializable {
             mostrarAlerta("Precio y Stock deben ser valores numéricos");
             return false;
         }
-        
+
         return true;
     }
 
@@ -295,9 +301,8 @@ public class InventarioController implements Initializable {
     public void setPrincipal(Main principal) {
         this.principal = principal;
     }
-    
-        //------------------------------------------------------------------------------------------------------------------INICIA EL REPORTE
-    
+
+    //------------------------------------------------------------------------------------------------------------------INICIA EL REPORTE
     //Map parametros
     private Map<String, Object> parametros;
 
@@ -313,14 +318,16 @@ public class InventarioController implements Initializable {
         }
         return reporte;
     }
+
     //inicializador de impresion  de reporte
     @FXML
-    private void imprimirReporte(){
+    private void imprimirReporte() {
         Connection conexion = Conexion.getInstancia().getConexion();
+        parametros = new HashMap<>();
+        parametros.put("img", "src/main/resources/image/");
         Report.generarReporte(conexion, parametros, cargarReporte("/org/tiendaKinal/report/Inventario.jasper"));
         Report.mostrarReporte();
     }
     //------------------------------------------------------------------------------------------------------------------FINALIZA EL REPORTE
 
-    
 }

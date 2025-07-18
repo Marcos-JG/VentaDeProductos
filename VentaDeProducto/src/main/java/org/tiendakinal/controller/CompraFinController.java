@@ -215,6 +215,7 @@
                     parametros = new HashMap<>();
                     parametros.put("idCompra", idCompra);
 //                    parametros.put("URL", getClass().getResource("org/tiendaKinal/report/").toString());
+                    parametros.put("img", "src/main/resources/image/");
                     parametros.put("URL","org/tiendaKinal/report/" );
                     System.out.println("ID de compra enviado al reporte: " + idCompra);
                     InputStream reporte = cargarReporte("/org/tiendakinal/report/VentaProductos.jasper");

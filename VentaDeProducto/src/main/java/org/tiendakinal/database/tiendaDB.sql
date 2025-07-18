@@ -546,10 +546,7 @@ create procedure sp_ListarFactura()
 $$
 DELIMITER ;
 call sp_ListarFactura();
-SET @idPago = 0;
-CALL sp_AgregarPagos('Efectivo', 750.00, 1, @idPago);
-SELECT @idPago;
-CALL sp_AgregarFactura('Efectivo', 1, 1, @idPago);
+
 
 
 -- UPDATE
@@ -622,9 +619,58 @@ call sp_AgregarUsuario("Marcos","mg","mg","Empleado");
 call sp_AgregarUsuario("Iosef","is","is","Empleado");
 call sp_ListarUsuario();
 
-call sp_AgregarProducto('Chapulines','marca', 250.00, 30, '10001');
-call sp_AgregarProducto('caites','marca','100.00',40,'10002');
-call sp_AgregarProducto('tennis','marca','300.00',50,'10003');
+call sp_AgregarProducto('Chapulines','Chicote', 250.00, 30, '10001');
+call sp_AgregarProducto('caites','Chicote','100.00',40,'10002');
+call sp_AgregarProducto('tennis','Chicote','300.00',50,'10003');
+CALL sp_AgregarProducto('Ultraboost 22', 'Adidas', '3299.00', 50, '10004');
+CALL sp_AgregarProducto('Classic Leather', 'Reebok', '1899.00', 50, '10005');
+CALL sp_AgregarProducto('Chuck Taylor All Star', 'Converse', '1499.00', 50, '10006');
+CALL sp_AgregarProducto('Old Skool', 'Vans', '1599.00', 50, '10007');
+CALL sp_AgregarProducto('Air Jordan 1 Mid', 'Jordan', '3599.00', 50, '10008');
+CALL sp_AgregarProducto('Gel-Kayano 30', 'Asics', '3899.00', 50, '10009');
+CALL sp_AgregarProducto('RS-X Efekt', 'Puma', '2799.00', 50, '10010');
+CALL sp_AgregarProducto('FuelCell Propel v4', 'New Balance', '3199.00', 50, '10011');
+CALL sp_AgregarProducto('Cloudswift 3', 'On Running', '4299.00', 50, '10012');
+
+CALL sp_AgregarProducto('Blazer Mid 77', 'Nike', '2499.00', 50, '10013');
+CALL sp_AgregarProducto('Forum Low', 'Adidas', '1999.00', 50, '10014');
+CALL sp_AgregarProducto('Zig Kinetica 2.5', 'Reebok', '2699.00', 50, '10015');
+CALL sp_AgregarProducto('Run Star Hike', 'Converse', '2799.00', 50, '10016');
+CALL sp_AgregarProducto('Sk8-Hi', 'Vans', '1699.00', 50, '10017');
+CALL sp_AgregarProducto('Air Force 1', 'Nike', '2599.00', 50, '10018');
+CALL sp_AgregarProducto('Pegasus 41', 'Nike', '3199.00', 50, '10019');
+CALL sp_AgregarProducto('Suede Classic XXI', 'Puma', '1899.00', 50, '10020');
+CALL sp_AgregarProducto('574 Core', 'New Balance', '2199.00', 50, '10021');
+CALL sp_AgregarProducto('Cloud 5', 'On Running', '3899.00', 50, '10022');
+
+CALL sp_AgregarProducto('ZoomX Invincible Run', 'Nike', '4299.00', 50, '10023');
+CALL sp_AgregarProducto('Yeezy Boost 350 V2', 'Adidas', '5999.00', 50, '10024');
+CALL sp_AgregarProducto('Club C 85', 'Reebok', '1699.00', 50, '10025');
+CALL sp_AgregarProducto('Jack Purcell', 'Converse', '1999.00', 50, '10026');
+CALL sp_AgregarProducto('Authentic', 'Vans', '1399.00', 50, '10027');
+CALL sp_AgregarProducto('React Infinity Run', 'Nike', '3799.00', 50, '10028');
+CALL sp_AgregarProducto('X_PLRBOOST', 'Adidas', '3099.00', 50, '10029');
+CALL sp_AgregarProducto('Revolution 6', 'Nike', '1599.00', 50, '10030');
+CALL sp_AgregarProducto('NMD_R1', 'Adidas', '3399.00', 50, '10031');
+CALL sp_AgregarProducto('Nano X3', 'Reebok', '3499.00', 50, '10032');
+
+CALL sp_AgregarProducto('React Pegasus Trail 4', 'Nike', '3699.00', 50, '10033');
+CALL sp_AgregarProducto('ZX 22 Boost', 'Adidas', '2899.00', 50, '10034');
+CALL sp_AgregarProducto('Waffle One', 'Nike', '2299.00', 50, '10035');
+CALL sp_AgregarProducto('Trek Chuck Taylor', 'Converse', '2699.00', 50, '10036');
+CALL sp_AgregarProducto('Slip-On', 'Vans', '1299.00', 50, '10037');
+CALL sp_AgregarProducto('RS-TRCK', 'Puma', '2999.00', 50, '10038');
+CALL sp_AgregarProducto('FuelCell SuperComp Elite v4', 'New Balance', '5199.00', 50, '10039');
+CALL sp_AgregarProducto('Cloudmonster 2', 'On Running', '5199.00', 50, '10040');
+CALL sp_AgregarProducto('Air Zoom Structure 25', 'Nike', '3399.00', 50, '10041');
+CALL sp_AgregarProducto('Terrex Swift R3 GTX', 'Adidas', '4499.00', 50, '10042');
+
+CALL sp_AgregarProducto('Cl Legacy AZ', 'Reebok', '1999.00', 50, '10043');
+CALL sp_AgregarProducto('Air Huarache', 'Nike', '2999.00', 50, '10044');
+CALL sp_AgregarProducto('Campus 00s', 'Adidas', '2899.00', 50, '10045');
+CALL sp_AgregarProducto('Zoom Vomero 5', 'Nike', '4099.00', 50, '10046');
+CALL sp_AgregarProducto('Future Rider', 'Puma', '2099.00', 50, '10047');
+CALL sp_AgregarProducto('Made in USA 990v6', 'New Balance', '6399.00', 50, '10048');
 call sp_ListarProductos();
 
 call sp_AgregarCompra('Pendiente','Pagado');

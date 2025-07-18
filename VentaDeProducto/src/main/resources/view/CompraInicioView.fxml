@@ -94,7 +94,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TableView fx:id="tablaProductos" layoutX="22.0" layoutY="90.0" prefHeight="281.0" prefWidth="1259.0">
+      <TableView fx:id="tablaProductos" layoutX="22.0" layoutY="83.0" prefHeight="281.0" prefWidth="1259.0">
          <columns>
             <TableColumn fx:id="colId" prefWidth="63.0" text="ID" />
             <TableColumn fx:id="colCodigo" minWidth="0.0" prefWidth="131.0" text="CODIGO" />

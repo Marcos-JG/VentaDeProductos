@@ -57,7 +57,7 @@
                   <Font size="24.0" />
                </font>
             </TextField>
-            <Button fx:id="btnIngresar" mnemonicParsing="false" onAction="#clickManejadorEventos" prefHeight="40.0" prefWidth="106.0" styleClass="button11" text="INGRESAR" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="btnIngresar" mnemonicParsing="false" onAction="#clickManejadorEventos" prefHeight="40.0" prefWidth="106.0" text="INGRESAR" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

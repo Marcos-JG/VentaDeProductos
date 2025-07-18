@@ -1,5 +1,6 @@
 # Reportes Diarios - Proyecto Venta De Productos
 ### Avances Diarios
+### Para comprar un productos coloque su id(codigo de barras) y la cantidad
 **11 de julio**  
 - **Grupo**:  
   - Se realizó la planificación del modelo de datos, definiendo entidades y sus atributos.
